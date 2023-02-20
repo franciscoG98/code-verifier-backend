@@ -20,6 +20,12 @@ Se instalaron las siguientes dependencias:
 
 **dotenv** para cargar variables de entorno desde un archivo .env 
 
+**cors** se utiliza para permitir que las solicitudes de recursos de diferentes dominios se realicen de manera segura al permitir que un servidor especifique qué dominios pueden solicitar los recursos y qué tipos de solicitudes están permitidas. Esto ayuda a prevenir ataques malintencionados y protege la privacidad y seguridad del usuario.
+
+**helmet** se utiliza para mejorar la seguridad de una aplicación web de Node.js mediante la aplicación de configuraciones y ajustes de seguridad que protegen la aplicación de vulnerabilidades comunes en la web.
+
+**moment** para obtener la fecha y hora
+
 # Scripts
 
 ```"build": "npx tsc"```: para compilar el codigo typescript en javascript y generar la carpeta dist

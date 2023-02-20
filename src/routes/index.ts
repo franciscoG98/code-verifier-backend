@@ -5,6 +5,7 @@
 
 import express, { Request, Response } from 'express';
 import helloRouter from './HelloRouter';
+import goodbyeRouter from './GoodbyeRouter';
 import { LogInfo } from '../utils/logger';
 
 // Server instance 
@@ -24,6 +25,8 @@ rootRouter.get('/', (req: Request, res: Response) => {
 // Redirection to Routers & Controllers
 server.use('/', rootRouter);        // http://localhost:8000/api/
 server.use('/hello', helloRouter);  // http://localhost:8000/api/hello --> helloRouter
+server.use('/goodbye', goodbyeRouter);  // http://localhost:8000/api/hello --> helloRouter
+
 
 export default server;
 
