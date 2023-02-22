@@ -11,6 +11,7 @@ import helmet from 'helmet';
 
 // Root Router
 import rootRouter from '../routes';
+import { serve } from 'swagger-ui-express';
 
 // * Configuration the .env file
 dotenv.config();
@@ -22,6 +23,10 @@ const server: Express = express();
 server.use(
     '/api', rootRouter
     );
+
+
+// Static Server
+server.use(express.static('public'));
 
 
 // TODO : Mongoose Conection

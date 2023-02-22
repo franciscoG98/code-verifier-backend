@@ -2,11 +2,12 @@ import express, { Request, Response } from "express";
 import { GoodbyeController } from "../controller/GoodbyeController";
 import { LogInfo } from "../utils/logger";
 import moment from "moment";
+import { GoodbyeResponse } from "@/controller/types";
 
 // Router from Express
 let goodbyeRouter = express.Router();
 
-// http://localhost:8000/api/hello?name=Pancho/
+// http://localhost:8000/api/goodbye?name=Pancho/
 goodbyeRouter.route('/')
     .get(async (req: Request, res: Response) => {
         
@@ -20,14 +21,10 @@ goodbyeRouter.route('/')
         const controller: GoodbyeController = new GoodbyeController();
         
         // Obtein response
-        const response = await controller.getMessage(name);
-
-        const json: any = {
-            response
-        }
+        const response: GoodbyeResponse = await controller.getMessage(name);
 
         // Send to the client the response
-        return res.json(json);
+        return res.send(response);
     })
 
 export default goodbyeRouter;
