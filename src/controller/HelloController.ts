@@ -13,7 +13,9 @@ export class HelloController implements IHelloController {
      * @returns { BasicResponse } Promise of BasicResponse
      */
     @Get('/')
-    public async getMessage(@Query()name?: string | undefined): Promise<BasicResponse> {
+    // name is any here because a swagger error "GenerateMetadataError: @Query('name') 
+    // Can't support 'union' type."
+    public async getMessage(@Query() name?: any): Promise<BasicResponse> {
         LogSuccess('[/api/hello] Get Request');
 
         return {
